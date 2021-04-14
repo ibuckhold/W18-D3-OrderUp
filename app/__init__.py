@@ -4,10 +4,12 @@ from .routes import orders
 from .models import db
 from flask_login import LoginManager
 from .models import db, Employee
+from .routes import session
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
 app.register_blueprint(orders.bp)
+app.register_blueprint(session.bp)
 
 db.init_app(app)
 
